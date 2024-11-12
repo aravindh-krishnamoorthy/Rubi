@@ -71,7 +71,7 @@ csc::usage = "Inert cosecant function";
 Begin["`Private`"];
 
 
-$rubiDir = DirectoryName[System`Private`$InputFileName];
+$rubiDir = Directory[];
 
 
 $RubiVersion = StringJoin["Rubi ", Version /. List@@Get[FileNameJoin[{$rubiDir, "PacletInfo.m"}]]];
@@ -203,12 +203,13 @@ LoadRules[$utilityPackage];
   LoadRules[FileNameJoin[{"1 Algebraic functions", "1.4 Miscellaneous", "1.4.3 Miscellaneous algebraic functions"}]];
   LoadRules[FileNameJoin[{"9 Miscellaneous", "9.2 Piecewise linear functions"}]];
 
+$LoadElementaryFunctionRules = False
 If[$LoadElementaryFunctionRules===True,
   LoadRules[FileNameJoin[{"2 Exponentials", "2.1 (c+d x)^m (a+b (F^(g (e+f x)))^n)^p"}]];
   LoadRules[FileNameJoin[{"2 Exponentials", "2.2 (c+d x)^m (F^(g (e+f x)))^n (a+b (F^(g (e+f x)))^n)^p"}]];
   LoadRules[FileNameJoin[{"2 Exponentials", "2.3 Miscellaneous exponentials"}]];
 
-  LoadRules[FileNameJoin[{"3 Logarithms", "3.1.1 (a+b log(c x^n))^p"}]];
+  (*LoadRules[FileNameJoin[{"3 Logarithms", "3.1.1 (a+b log(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"3 Logarithms", "3.1.2 (d x)^m (a+b log(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"3 Logarithms", "3.1.3 (d+e x^r)^q (a+b log(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"3 Logarithms", "3.1.4 (f x)^m (d+e x^r)^q (a+b log(c x^n))^p"}]];
@@ -218,7 +219,7 @@ If[$LoadElementaryFunctionRules===True,
   LoadRules[FileNameJoin[{"3 Logarithms", "3.2.1 (f+g x)^m (A+B log(e ((a+b x) over (c+d x))^n))^p"}]];
   LoadRules[FileNameJoin[{"3 Logarithms", "3.2.2 (f+g x)^m (h+i x)^q (A+B log(e ((a+b x) over (c+d x))^n))^p"}]];
   LoadRules[FileNameJoin[{"3 Logarithms", "3.2.3 u log(e (f (a+b x)^p (c+d x)^q)^r)^s"}]];
-  LoadRules[FileNameJoin[{"3 Logarithms", "3.5 Miscellaneous logarithms"}]];
+  LoadRules[FileNameJoin[{"3 Logarithms", "3.5 Miscellaneous logarithms"}]];*)
 
   LoadRules[FileNameJoin[{"4 Trig functions", "4.1 Sine", "4.1.0.1 (a sin)^m (b trg)^n"}]];
   LoadRules[FileNameJoin[{"4 Trig functions", "4.1 Sine", "4.1.0.2 (a trg)^m (b tan)^n"}]];
@@ -287,13 +288,13 @@ If[$LoadElementaryFunctionRules===True,
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.1 Inverse sine", "5.1.5 u (a+b arcsin(c x))^n"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.1 Inverse sine", "5.1.6 Miscellaneous inverse sine"}]];
 
-  LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.1 (a+b arctan(c x^n))^p"}]];
+  (*LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.1 (a+b arctan(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.2 (d x)^m (a+b arctan(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.3 (d+e x)^m (a+b arctan(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.4 u (a+b arctan(c x))^p"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.5 u (a+b arctan(c+d x))^p"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.6 Exponentials of inverse tangent"}]];
-  LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.7 Miscellaneous inverse tangent"}]];
+  LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.3 Inverse tangent", "5.3.7 Miscellaneous inverse tangent"}]];*)
 
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.5 Inverse secant", "5.5.1 u (a+b arcsec(c x))^n"}]];
   LoadRules[FileNameJoin[{"5 Inverse trig functions", "5.5 Inverse secant", "5.5.2 Miscellaneous inverse secant"}]];
@@ -329,13 +330,13 @@ If[$LoadElementaryFunctionRules===True,
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.2 Inverse hyperbolic cosine", "7.2.5 u (a+b arccosh(c x))^n"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.2 Inverse hyperbolic cosine", "7.2.6 Miscellaneous inverse hyperbolic cosine"}]];
 
-  LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.1 (a+b arctanh(c x^n))^p"}]];
+  (*LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.1 (a+b arctanh(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.2 (d x)^m (a+b arctanh(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.3 (d+e x)^m (a+b arctanh(c x^n))^p"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.4 u (a+b arctanh(c x))^p"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.5 u (a+b arctanh(c+d x))^p"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.6 Exponentials of inverse hyperbolic tangent"}]];
-  LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.7 Miscellaneous inverse hyperbolic tangent"}]];
+  LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.3 Inverse hyperbolic tangent", "7.3.7 Miscellaneous inverse hyperbolic tangent"}]];*)
 
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.5 Inverse hyperbolic secant", "7.5.1 u (a+b arcsech(c x))^n"}]];
   LoadRules[FileNameJoin[{"7 Inverse hyperbolic functions", "7.5 Inverse hyperbolic secant", "7.5.2 Miscellaneous inverse hyperbolic secant"}]];
@@ -347,7 +348,7 @@ If[$LoadElementaryFunctionRules===True,
   LoadRules[FileNameJoin[{"8 Special functions", "8.5 Hyperbolic integral functions"}]];
   LoadRules[FileNameJoin[{"8 Special functions", "8.6 Gamma functions"}]];
   LoadRules[FileNameJoin[{"8 Special functions", "8.7 Zeta function"}]];
-  LoadRules[FileNameJoin[{"8 Special functions", "8.8 Polylogarithm function"}]];
+  (*LoadRules[FileNameJoin[{"8 Special functions", "8.8 Polylogarithm function"}]];*)
   LoadRules[FileNameJoin[{"8 Special functions", "8.9 Product logarithm function"}]];
 (*LoadRules[FileNameJoin[{"8 Special functions", "8.10 Bessel functions"}]]; *)
 
@@ -359,7 +360,7 @@ If[$LoadElementaryFunctionRules===True,
 (* ::Section::Closed:: *)
 (* Modify rules to display steps*)
 
-
+$LoadShowSteps = False
 (* Calculate the rule-count directly after all integration rules, because below there are some more rules added that are not integration rules. *)
 $RuleCount = Length[DownValues[Int]];
 
