@@ -354,7 +354,7 @@ If[$LoadElementaryFunctionRules===True,
 
   LoadRules[FileNameJoin[{"9 Miscellaneous", "9.1 Derivative integration rules"}]]
 ];
-  LoadRules[FileNameJoin[{"9 Miscellaneous", "9.3 Miscellaneous integration rules"}]];
+(*  LoadRules[FileNameJoin[{"9 Miscellaneous", "9.3 Miscellaneous integration rules"}]]; *)
 
 
 (* ::Section::Closed:: *)
